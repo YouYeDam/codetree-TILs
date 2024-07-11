@@ -7,13 +7,9 @@ int main() {
 
     cin >> aa >> ag >> ba >> bg;
 
-    if (aa >= 19 || ba >= 19) {
-        if (ag == 'M' || bg == 'M') {
-            cout << 1;
-        }
-        else {
-            cout << 0;
-        }
+
+    if ((aa >= 19 && ag == 'M') || (ba >= 19 && bg == 'M')) {
+        cout << 1;
     }
     else {
         cout << 0;
