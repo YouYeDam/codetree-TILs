@@ -9,7 +9,9 @@ int main() {
         if (y % 100 == 0 && y % 400 != 0) {
             cout << "false";
         }
-        cout << "true";
+        else {
+            cout << "true";
+        }
     }
     else {
         cout << "false";
