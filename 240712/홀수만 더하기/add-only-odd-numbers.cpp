@@ -9,8 +9,8 @@ int main() {
         int x;
         cin >> x;
 
-        if (i % 2 == 1 && i % 3 == 0) {
-            sum += i;
+        if (x % 2 == 1 && x % 3 == 0) {
+            sum += x;
         }
     }
     cout << sum;
