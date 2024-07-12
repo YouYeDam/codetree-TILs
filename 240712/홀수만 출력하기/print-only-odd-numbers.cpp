@@ -9,7 +9,7 @@ int main() {
         int x;
         cin >> x;
 
-        if (x % 3 == 0) {
+        if (x % 2 == 1 && x % 3 == 0) {
             cout << x << endl;
         }
     }
