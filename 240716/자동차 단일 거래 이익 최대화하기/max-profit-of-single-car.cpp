@@ -16,6 +16,7 @@ int main() {
             min_i = i;
         }
     }
+
     int max_val = INT_MIN;
     for (int i = min_i + 1; i < n; i++) {
         if (arr[i] > max_val) {
@@ -23,7 +24,7 @@ int main() {
         }
     }
 
-    if (max_val == 0) {
+    if (max_val == INT_MIN) {
         cout << 0;
     }
     else {
