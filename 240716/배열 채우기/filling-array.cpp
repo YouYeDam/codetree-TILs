@@ -13,7 +13,7 @@ int main() {
             break;
         }
     }
-    if (IsStop) {
+    if (!IsStop) {
         stop_num = 9;
     }
     for (int i = stop_num - 1; i >= 0; i--) {
