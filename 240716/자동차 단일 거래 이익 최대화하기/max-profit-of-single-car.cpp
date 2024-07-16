@@ -1,11 +1,12 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
     int arr[1000];
-    int min_val = 1001;  
+    int min_val = INT_MAX;  
     int min_i = 0;
 
     for (int i = 0; i < n; i++) {
@@ -15,12 +16,13 @@ int main() {
             min_i = i;
         }
     }
-    int max_val = 0;
+    int max_val = INT_MIN;
     for (int i = min_i + 1; i < n; i++) {
         if (arr[i] > max_val) {
             max_val = arr[i];
         }
     }
+
     if (max_val == 0) {
         cout << 0;
     }
