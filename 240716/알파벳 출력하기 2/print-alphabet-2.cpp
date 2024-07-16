@@ -5,7 +5,7 @@ int main() {
     int n;
     cin >> n;
     int alp = 65;
-
+    
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             if (j < i) {
@@ -14,7 +14,7 @@ int main() {
             else {
                 cout << (char)alp << " ";
                 alp++;
-                if (alp == 90) {
+                if (alp == 91) {
                     alp = 65;
                 }
             }
