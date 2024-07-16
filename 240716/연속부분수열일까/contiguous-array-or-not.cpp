@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     int n1, n2;
-    cin >> n1, n2;
+    cin >> n1 >> n2;
 
     int arr1[100];
     int arr2[100];
@@ -15,7 +15,7 @@ int main() {
     for (int i = 0; i < n2; i++) {
         cin >> arr2[i];
     }
-
+    
     bool IsExist = false;
 
     for (int i = 0; i <= n1 - n2; i++) {
@@ -33,12 +33,13 @@ int main() {
             }
         }
     }
-
+    
     if (IsExist) {
         cout << "Yes";
     }
     else {
         cout << "No";
     }
+    
     return 0;
 }
