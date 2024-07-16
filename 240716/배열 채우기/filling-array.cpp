@@ -14,7 +14,7 @@ int main() {
         }
     }
     if (!IsStop) {
-        stop_num = 9;
+        stop_num = 10;
     }
     for (int i = stop_num - 1; i >= 0; i--) {
         cout << arr[i] << " ";
