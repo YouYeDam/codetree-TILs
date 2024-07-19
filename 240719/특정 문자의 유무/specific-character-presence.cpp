@@ -12,7 +12,7 @@ int main() {
         if (s.substr(i, 2) == "ee") {
             ee_exist = true;
         }
-        if (s.substr(1, 2) == "ab") {
+        if (s.substr(i, 2) == "ab") {
             ab_exist = true;
         }
     }
