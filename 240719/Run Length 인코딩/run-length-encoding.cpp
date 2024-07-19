@@ -21,6 +21,9 @@ int main() {
             if (num >= 100) {
                 res_str += num / 100 + 48;
                 num %= 100;
+                if (num < 10) {
+                    res_str += 48;
+                }
             }
             if (num >= 10) {
                 res_str += num / 10 + 48;
