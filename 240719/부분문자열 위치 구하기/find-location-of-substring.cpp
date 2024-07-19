@@ -7,7 +7,7 @@ int main() {
     cin >> input_str >> obj_str;
     bool IsExist = false;
 
-    for (int i = 0; i < input_str.length() - obj_str.length(); i++) {
+    for (int i = 0; i <= input_str.length() - obj_str.length(); i++) {
         if(input_str.substr(i, obj_str.length()) == obj_str) {
             cout << i;
             IsExist = true;
