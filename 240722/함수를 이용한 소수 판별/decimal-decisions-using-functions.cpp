@@ -11,7 +11,7 @@ int FindDivisior(int a, int b) {
                 break;
             }
         }
-        if (IsDivisior == false) {
+        if (i != 1 && IsDivisior == false) {
             sum += i;
         }
     }
