@@ -7,7 +7,9 @@ bool CheckLeapYear(int y) {
         if (y % 100 == 0 && y % 400 != 0) {
             IsLeapYear = false;
         }
-        IsLeapYear = true;
+        else {
+            IsLeapYear = true;
+        }
     }
     return IsLeapYear;
 }
@@ -15,6 +17,7 @@ int main() {
     int y;
     cin >> y;
     bool res = CheckLeapYear(y);
+
     if (res == true) {
         cout << "true";
     }
