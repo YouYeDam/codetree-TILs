@@ -4,7 +4,7 @@ using namespace std;
 bool CheckLeapYear(int y) {
     bool IsLeapYear = false;
     if (y % 4 == 0) {
-        if (y % 4 == 100 && y % 400 != 0) {
+        if (y % 4 == 100 && y % 400 != 100) {
             IsLeapYear = false;
         }
         IsLeapYear = true;
