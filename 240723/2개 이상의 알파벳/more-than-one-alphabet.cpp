@@ -5,7 +5,7 @@ using namespace std;
 void CheckCondition(string &str) {
     bool IsDiff = false;
 
-    for (int i = 0; i < str.length(); i++) {
+    for (int i = 0; i < str.length() - 1; i++) {
         if (str[i] != str[i+1]) {
             IsDiff = true;
             break;
@@ -22,7 +22,6 @@ void CheckCondition(string &str) {
 int main() {
     string str;
     cin >> str;
-
     CheckCondition(str);
     return 0;
 }
