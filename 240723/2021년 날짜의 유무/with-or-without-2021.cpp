@@ -27,9 +27,8 @@ bool CheckDate(int m, int d) {
                 IsExist = false;
             }
         }
-
-        return IsExist;
     }
+    return IsExist;
 }
 int main() {
     int m, d;
