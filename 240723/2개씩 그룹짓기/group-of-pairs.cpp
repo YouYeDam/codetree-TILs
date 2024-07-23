@@ -8,7 +8,7 @@ int main() {
     cin >> n;
     n *= 2;
 
-    int arr[1000];
+    int arr[2000];
 
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
