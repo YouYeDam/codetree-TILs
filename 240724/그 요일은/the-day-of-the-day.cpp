@@ -49,7 +49,7 @@ int main() {
         obj = 6;
     }
 
-    if (mod <= obj) {
+    if (mod >= obj) {
         cnt++;
     }
 
