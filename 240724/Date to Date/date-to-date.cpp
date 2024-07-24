@@ -9,17 +9,16 @@ int main() {
 
     int sum1 = 0;
     int sum2 = 0;
-
     for (int i = 1; i <= m1; i++) {
-        sum1 += day[i];
+        sum1 += day[i - 1];
     }
     sum1 += d1;
 
     for (int i = 1; i <= m2; i++) {
-        sum2 += day[i];
+        sum2 += day[i - 1];
     }
     sum2 += d2;
 
-    cout << sum2 - sum1;
+    cout << sum2 - sum1 + 1;
     return 0;
 }
