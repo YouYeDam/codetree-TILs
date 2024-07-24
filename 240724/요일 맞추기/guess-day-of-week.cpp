@@ -7,8 +7,17 @@ int main() {
 
     int num_of_days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    int sum1 = num_of_days[m1 - 1] + d1;
-    int sum2 = num_of_days[m2 - 1] + d2;
+    int sum1 = 0, sum2 = 0;
+
+    for (int i = 1; i <= m1 - 1; i++) {
+        sum1 += num_of_days[i];
+    }
+    sum1 += d1;
+
+    for (int i = 1; i <= m2 - 1; i++) {
+        sum2 += num_of_days[i];
+    }
+    sum2 += d2;
 
     int diff;
 
@@ -60,9 +69,5 @@ int main() {
             cout << "Tue";
         }
     }
-
-
-
-
     return 0;
 }
