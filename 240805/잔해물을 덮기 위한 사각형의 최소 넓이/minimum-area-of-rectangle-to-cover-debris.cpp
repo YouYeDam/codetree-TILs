@@ -27,10 +27,12 @@ int main() {
     int max_x = INT_MIN;
     int min_y = INT_MAX;
     int max_y = INT_MIN;
+    bool IsExist = false;
 
     for (int i = 0; i < 2001; i++) {
         for (int j = 0; j < 2001; j++) {
             if (arr[i][j] == 1) {
+                IsExist = true;
                 if (i < min_x) {
                     min_x = i;
                 }
@@ -49,6 +51,12 @@ int main() {
 
     int res_x = max_x - min_x + 1;
     int res_y = max_y - min_y + 1;
-    cout << res_x * res_y;
+
+    if (IsExist) {
+        cout << res_x * res_y;
+    }
+    else {
+        cout << 0;
+    }
     return 0;
 }
