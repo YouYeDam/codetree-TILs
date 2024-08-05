@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int arr[1000];
+    int arr[1001] = {};
     int n;
     cin >> n;
 
@@ -11,22 +11,19 @@ int main() {
         cin >> arr[i];
     }
 
-    int max_num = 1;
-    int cnt = 0;
+    int max = 1;
+    int cnt = 1;
     for (int i = 0; i < n; i++) {
-        if (i == 0 || arr[i] == arr[i - 1]) {
+        if (arr[i] == arr[i + 1]) {
             cnt++;
         }
         else {
-            if (cnt > max_num) {
-                max_num = cnt;
-                cnt = 1;
+            if (cnt > max) {
+                max = cnt;
             }
+            cnt = 1;
         }
     }
-    if (cnt > max_num) {
-        max_num = cnt;
-    }
-    cout << max_num;
+    cout << max;
     return 0;
 }
