@@ -24,6 +24,9 @@ int main() {
             }
         }
     }
+    if (cnt > max_num) {
+        max_num = cnt;
+    }
     cout << max_num;
     return 0;
 }
