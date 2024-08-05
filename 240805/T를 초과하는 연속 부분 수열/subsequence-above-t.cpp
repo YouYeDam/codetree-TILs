@@ -18,7 +18,7 @@ int main() {
             cnt++;
         }
         else {
-            if (cnt > max_val) {
+            if (arr[i] > t && cnt > max_val) {
                 max_val = cnt;
             }
             cnt = 1;
