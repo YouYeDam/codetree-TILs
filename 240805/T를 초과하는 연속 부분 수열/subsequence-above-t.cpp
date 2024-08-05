@@ -12,8 +12,7 @@ int main() {
 
     int max_val = 0;
     int cnt;
-
-
+    
     if (arr[0] > t) {
         cnt = 1;
     }
@@ -22,33 +21,14 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) {
-        if (arr[i] > t) {
-            if (arr[i + 1] > arr[i]) {
-                cnt++;
-            }
-            else {
-                if (cnt > max_val) {
-                    max_val = cnt;
-                }
-
-                if (arr[i + 1] > t) {
-                    cnt = 1;
-                }
-                else {
-                    cnt = 0;
-                }
-            }
+        if (arr[i + 1] > t) {
+            cnt++;
         }
         else {
             if (cnt > max_val) {
                 max_val = cnt;
             }
-            if (arr[i + 1] > t) {
-                cnt = 1;
-            }
-            else {
-                cnt = 0;
-            }
+            cnt = 0;
         }
     }
 
