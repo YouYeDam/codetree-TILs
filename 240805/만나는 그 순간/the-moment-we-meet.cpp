@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    int arr_a[1001];
-    int arr_b[1001];
+    int arr_a[1000001];
+    int arr_b[1000001];
 
     arr_a[0] = 0;
     arr_b[0] = 0;
