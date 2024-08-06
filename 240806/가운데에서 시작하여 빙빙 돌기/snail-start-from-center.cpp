@@ -2,21 +2,22 @@
 using namespace std;
 
 int n;
-int x, y;
+int x, y, p;
 int arr[100][100] = {};
 int dx[4] = {0, 1, 0, -1};
 int dy[4] = {1, 0, -1, 0};
 
 bool InRange(int x, int y) {
-    return (0 <= x && x < n && 0 <= y && y < n);
+    return (n / 2 - p <= x && x <= n / 2 + p && n / 2 - p <= y && y <= n / 2 + p);
 }
 
 int main() {
     cin >> n;
     int dir = 0;
-
     x = n / 2;
     y = n / 2;
+    p = 1;
+    int limit = 3;
 
     int cnt = 2;
     arr[x][y] = 1;
@@ -25,8 +26,7 @@ int main() {
         for (int j = 0; j < n; j++) {
             int nx = x + dx[dir];
             int ny = y + dy[dir];
-
-            if (!InRange(nx, ny) || arr[nx][ny] != 0) {
+            if (!InRange(nx, ny)) {
                 dir = (dir + 3) % 4;
             }
             x = x + dx[dir];
@@ -34,6 +34,10 @@ int main() {
 
             arr[x][y] = cnt;
             cnt++;
+            if (cnt == limit * limit) {
+                limit += 2;
+                p++;
+            }
             if (cnt > n * n) {
                 break;
             }
