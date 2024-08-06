@@ -4,7 +4,7 @@ using namespace std;
 
 int n, k;
 int x, y;
-char arr[100][100];
+char arr[1000][1000];
 int dx[4] = {0, -1, 0, 1};
 int dy[4] = {1, 0, -1, 0};
 
