@@ -19,23 +19,52 @@ int main() {
             total_time = t;
         }
 
-        infect_time[t][0] = x; // 감염시킨자
-        infect_time[t][1] = y; // 감염당한자
+        infect_time[t][0] = x;
+        infect_time[t][1] = y;
         infect_time[t][2] = 1; // 악수여부
     }    
 
     for (int i = 1; i <= total_time; i++) {
-        int infectee_num = infect_time[i][0];
-        int infected_num = infect_time[i][1];
+        int x_num = infect_time[i][0];
+        int y_num = infect_time[i][1];
         
         if (infect_time[i][2] != 1) { // 악수여부가 없으면 건너뛰기
             continue;
         }
 
-        if (infectee[infectee_num] == 1) {
-            if (infect_count[infectee_num] <= K) {
-                infectee[infected_num] = 1;
-                infect_count[infectee_num]++;
+        if (infectee[x_num] == 1) { //x가 감염자 
+            if (infect_count[x_num] < K) { //x의 악수 k번 미만
+                infect_count[x_num]++;
+                if (infectee[y_num] == 1) { //y도 감염자
+                    infect_count[y_num]++;
+                }
+                else {
+                    infectee[y_num] = 1;
+                }
+            }
+            else { //악수 k번 이상
+                infect_count[x_num]++;
+                if (infectee[y_num] == 1) { //y도 감염자
+                    infect_count[y_num]++;
+                }
+            }
+        }
+
+        else if (infectee[y_num] == 1) { //y가 감염자 
+            if (infect_count[y_num] < K) { //y의 악수 k번 미만
+                infect_count[y_num]++;
+                if (infectee[x_num] == 1) { //x도 감염자
+                    infect_count[x_num]++;
+                }
+                else {
+                    infectee[x_num] = 1;
+                }
+            }
+            else { //악수 k번 이상
+                infect_count[y_num]++;
+                if (infectee[x_num] == 1) { //x도 감염자
+                    infect_count[x_num]++;
+                }
             }
         }
     }
