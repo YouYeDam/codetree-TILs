@@ -18,7 +18,7 @@ int main() {
         for (int j = 0; j < n - 2; j++) {
             for (int k = 0; k < n; k++) {
                 for (int v = 0; v < n - 2; v++) {
-                    if (k >= i && k <= i + 2 && v >= j && v <= j + 2) {
+                    if (k == i && v >= j && v <= j + 2) {
                         continue;
                     }
                     int sum1 = arr[i][j] + arr[i][j + 1] + arr[i][j + 2];
