@@ -13,8 +13,11 @@ int main() {
 
     int max_val = 0;
 
-    for (int i = 0; i < n - k; i++) {
-        int sum = arr[i] + arr[i + 1] + arr[i + 2];
+    for (int i = 0; i <= n - k; i++) {
+        int sum = 0;
+        for (int j = 0; j < k; j++) {
+            sum += arr[i + j];
+        }
         max_val = max(max_val, sum);
     }
     cout << max_val;
