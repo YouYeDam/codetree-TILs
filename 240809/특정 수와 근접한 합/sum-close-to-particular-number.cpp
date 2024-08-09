@@ -15,7 +15,7 @@ int main() {
     int nearest = INT_MAX;
 
     for (int i = 0; i < n - 1; i++) {
-        for (int j = i; j < n; j++) {
+        for (int j = i + 1; j < n; j++) {
             int sum = 0;
             for (int k = 0; k < n; k++) {
                 if (k == i || k == j) {
