@@ -5,11 +5,20 @@ using namespace std;
 int main() {
     string a;
     cin >> a;
+    
     string max_val;
     int res;
     int len = a.length();
 
-    if (a[len - 1] == '0') {
+    bool IsExistZero = false;
+    for (int i = 0; i < a.length(); i++) {
+        if (a[i] == '0') {
+            IsExistZero = true;
+            break;
+        }
+    }
+
+    if (IsExistZero) {
         for (int i = 0; i < a.length(); i++) {
             if (a[i] == '0') {
                 a[i] = '1';
