@@ -18,13 +18,13 @@ int main() {
             for (int k = 0; k < n; k++) {
                 for (int v = 0; v < n - 2; v++) {
                     if (k == i) {
-                        if (v >= i && v <= i + 2) {
+                        if (v >= j && v <= j + 2) {
                             continue;
                         }
-                        if (v + 1 >= i && v + 1 <= i + 2) {
+                        if (v + 1 >= j && v + 1 <= j + 2) {
                             continue;
                         }
-                        if (v + 2 >= i && v + 2 <= i + 2) {
+                        if (v + 2 >= j && v + 2 <= j + 2) {
                             continue;
                         }
                     }
