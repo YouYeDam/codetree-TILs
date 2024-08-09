@@ -13,14 +13,14 @@ int main() {
     }
     char start_color = arr[0][0];
     int cnt = 0;
-
+    
     for (int i = 1; i < r - 2; i++) {
         for (int j = 1; j < c - 2; j++) {
             if (arr[i][j] != start_color) {
                 for (int k = i + 1; k < r - 1; k++) {
                     for (int v = j + 1; v < c - 1; v++) {
                         if (arr[k][v] == start_color) {
-                            if (arr[0][0] != arr[r][c]) {
+                            if (arr[0][0] != arr[r-1][c-1]) {
                                 cnt++;
                             }
                         }
