@@ -1,10 +1,11 @@
 #include <iostream>
 #include <climits>
+#include <algorithm>
 using namespace std;
 
 int main() {
-    int n, t, h;
-    cin >> n >> t >> h;
+    int n, h, t;
+    cin >> n >> h >> t;
 
     int arr[101];
     for (int i = 0; i < n; i++) {
@@ -23,9 +24,7 @@ int main() {
                 val += arr[j] - h;
             }
         }
-        if (val < min_val) {
-            min_val = val;
-        }
+        min_val = min(min_val, val);
     }
     cout << min_val;
     return 0;
