@@ -6,8 +6,7 @@ int main() {
     int n, t, h;
     cin >> n >> t >> h;
 
-    int arr[100];
-
+    int arr[101];
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
