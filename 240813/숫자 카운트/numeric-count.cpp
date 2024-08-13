@@ -9,7 +9,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i][0] >> arr[i][1] >> arr[i][2];
     }
-    
+
     int res_cnt = 0;
 
     for (int i = 111; i <= 999; i++) {
@@ -22,7 +22,9 @@ int main() {
         if (a1 == a2 || a1 == a3 || a2 == a3) {
             continue;
         }
-
+        if (a1 == 0 || a2 == 0 || a3 == 0) {
+            continue;
+        }
         for (int j = 0; j < n; j++) {
             int st = 0;
             int bl = 0;
