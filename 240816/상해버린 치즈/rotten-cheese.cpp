@@ -13,8 +13,6 @@ int main() {
         cin >> arr_info[i][0] >> arr_info[i][1] >> arr_info[i][2];
     }
 
-    arr_info[1][1] = 1; arr_info[1][2] = 3; 
-
     for (int i = 0; i < s; i++) {
         cin >> arr_ill[i][0] >> arr_ill[i][1];
     }
