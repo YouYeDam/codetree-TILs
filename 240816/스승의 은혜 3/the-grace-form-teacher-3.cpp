@@ -28,14 +28,15 @@ int main() {
         sort(new_arr, new_arr + n);
 
         int sum = 0;
-
+        int num = 0;
         for (int j = 0; j < n; j++) {
             sum += new_arr[j];
             if (sum > b) {
-                max_num = max(max_num, n - 1);
                 break;
             }
+            num++;
         }
+        max_num = max(max_num, num);
     }
     cout << max_num;
     return 0;
