@@ -13,7 +13,7 @@ int main() {
 
     int max_cnt = 0;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 1; i <= 3; i++) {
         int cup[4] = {};
         cup[i] = 1;
         int cnt = 0;
