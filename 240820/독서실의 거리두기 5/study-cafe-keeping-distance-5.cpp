@@ -19,9 +19,16 @@ int main() {
 
         new_str[i] = '1';
         int min_diff = INT_MAX;
-        int idx = 0;
+        int idx;
 
-        for (int j = 1; j < n; j++) {
+        for (int j = 0; j < n; j++) {
+            if (new_str[j] == '1') {
+                idx = j;
+                break;
+            }
+        }
+
+        for (int j = idx + 1; j < n; j++) {
             if (new_str[j] == '1') {
                 int diff = j - idx;
                 min_diff = min(min_diff, diff);
