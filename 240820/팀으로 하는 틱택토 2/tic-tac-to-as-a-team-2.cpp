@@ -1,14 +1,27 @@
 #include <iostream>
 using namespace std;
 
+int tictactoe[10][10] = {};
+
 bool CheckTicTacToe(int a, int b, int c) {
-    if ((a == b && a != c) || (a == c && a != b) || (b == c && b != a)) {
+    if (a == b && a != c && tictactoe[a][b] != 1 && tictactoe[b][a] != 1) {
+        tictactoe[a][b] = 1;
+        tictactoe[b][a] = 1;
+        return true;
+    }
+    else if (a == c && a != b && tictactoe[a][c] != 1 && tictactoe[c][a] != 1) {
+        tictactoe[a][c] = 1;
+        tictactoe[c][a] = 1;
+        return true;
+    }
+    else if (b == c && b != a && tictactoe[b][c] != 1 && tictactoe[c][b] != 1) {
+        tictactoe[b][c] = 1;
+        tictactoe[c][b] = 1;
         return true;
     }
     else {
         return false;
     }
-
 }
 
 int main() {
@@ -29,7 +42,6 @@ int main() {
     //00 10 20 => 01 11 21 => 02 12 22
     //00 11 22 => 02 11 20
     int cnt = 0;
-
     for (int i = 0; i < 3; i++) { // 가로
         int tic[3];
         for (int j = 0; j < 3; j++) {
