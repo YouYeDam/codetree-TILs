@@ -15,8 +15,8 @@ int main() {
 
     int min_val = INT_MAX;
 
-    for (int i = 0; i <= 10; i+=2) {
-        for (int j = 0; j <= 10; j+=2) {
+    for (int i = 0; i <= 100; i+=2) {
+        for (int j = 0; j <= 100; j+=2) {
             int n1_cnt = 0, n2_cnt = 0, n3_cnt = 0, n4_cnt = 0;
             int max_val = 0;
 
