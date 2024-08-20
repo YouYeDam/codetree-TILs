@@ -4,17 +4,17 @@ using namespace std;
 int tictactoe[10][10] = {};
 
 bool CheckTicTacToe(int a, int b, int c) {
-    if (a == b && a != c && tictactoe[a][b] != 1 && tictactoe[b][a] != 1) {
+    if (a == b && a != c && tictactoe[a][c] != 1 && tictactoe[c][a] != 1) {
         tictactoe[a][c] = 1;
         tictactoe[c][a] = 1;
         return true;
     }
-    else if (a == c && a != b && tictactoe[a][c] != 1 && tictactoe[c][a] != 1) {
+    else if (a == c && a != b && tictactoe[a][b] != 1 && tictactoe[b][a] != 1) {
         tictactoe[a][b] = 1;
         tictactoe[b][a] = 1;
         return true;
     }
-    else if (b == c && b != a && tictactoe[b][c] != 1 && tictactoe[c][b] != 1) {
+    else if (b == c && b != a && tictactoe[b][a] != 1 && tictactoe[a][b] != 1) {
         tictactoe[b][a] = 1;
         tictactoe[a][b] = 1;
         return true;
