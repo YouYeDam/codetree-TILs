@@ -31,7 +31,12 @@ int main() {
             max_cnt = cnt;
             bomb_num = i;
         }
-    } 
-    cout << bomb_num;
+    }
+    if (max_cnt == 0) {
+        cout << 0;
+    }
+    else {
+        cout << bomb_num;
+    }
     return 0;
 }
