@@ -17,15 +17,15 @@ int main() {
     }
 
     for (int i = a1; i <= a2; i++) {
-        for (int j = b1; j<= b2; j++) {
+        for (int j = b1; j <= b2; j++) {
             rect2[i][j] = 1;
         }
     }
 
     bool IsOverlapping = false;
 
-    for (int i = 0; i <= 101; i++) {
-        for (int j = 0; j <= 101; j++) {
+    for (int i = 1; i <= 100; i++) {
+        for (int j = 1; j <= 100; j++) {
             if (rect1[i][j] == 1 && rect2[i][j] == 1) {
                 IsOverlapping = true;
                 break;
