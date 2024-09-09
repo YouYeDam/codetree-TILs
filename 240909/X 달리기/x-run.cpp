@@ -1,41 +1,49 @@
 #include <iostream>
-#include <climits>
-#include <algorithm>
 using namespace std;
 
 int main() {
     int x;
     cin >> x;
-    int min_time = INT_MAX;
-
-    for (int i = 1; i <= x; i++) {
-        int speed = 1;
-        int dis = 0;
-        int time = 0;
-        bool SpeedUp = true;
-
-        while (dis < x) {
-            dis += speed;
-            time++;
-
-            if (speed == i) {
-                SpeedUp = false;
-            }
-
-            if (SpeedUp) {
-                speed++;
-            }
-            else {
-                speed--;
-                if (speed < 1) {
-                    speed = 1;
-                }
-            }
+    int max_speed;
+    int idx = 1;
+    while (true) {
+        int d_idx = idx * idx;
+        if (x >= d_idx) {
+            idx++;
         }
-        if (speed == 1) {
-            min_time = min(min_time, time);
+        else {
+            idx--;
+            max_speed = idx;
+            break;
         }
     }
-    cout << min_time;
+    int dis = 0;
+    int time = 0;
+    int sum = 0;
+    for (int i = 1; i <= max_speed; i++) {
+        dis += i;
+        sum += i;
+        time++;
+    }
+
+    int remain = x - dis;
+
+    while (remain > 0) {
+        if (remain >= sum) {
+            dis += max_speed;
+            remain -= max_speed;
+        }
+        else {
+            sum -= max_speed;
+            max_speed--;
+            dis += max_speed;
+            remain -= max_speed;
+        }
+        time++;
+    }
+    cout << time;
+
+
+
     return 0;
 }
