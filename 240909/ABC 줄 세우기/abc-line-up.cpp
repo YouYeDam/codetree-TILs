@@ -12,6 +12,7 @@ int main() {
     }
 
     int cnt = 0;
+
     for (int i = 0; i < n; i++) {
         char alp = i + 65;
         int idx;
@@ -27,18 +28,18 @@ int main() {
 
         if (idx > i) {
             for (int j = 0; j < idx - i; j++) {
-                char temp = arr[idx - 1];
-                arr[idx - 1] = arr[idx];
-                arr[idx] = temp;
+                char temp = arr[temp_idx - 1];
+                arr[temp_idx - 1] = arr[temp_idx];
+                arr[temp_idx] = temp;
                 temp_idx--;
                 cnt++;
             }
         }
         else if (idx < i) {
             for (int j = 0; j < i - idx; j++) {
-                char temp = arr[idx + 1];
-                arr[idx + 1] = arr[idx];
-                arr[idx] = temp;
+                char temp = arr[temp_idx + 1];
+                arr[temp_idx + 1] = arr[temp_idx];
+                arr[temp_idx] = temp;
                 temp_idx++;
                 cnt++;
             }
