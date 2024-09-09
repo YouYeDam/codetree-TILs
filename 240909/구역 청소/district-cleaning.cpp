@@ -23,12 +23,23 @@ int main() {
         }
     }
 
-    if (b >= c || d >= a) {
-        cnt--;
+    if (a >= c) {
+        if (d >= a) {
+            cnt--;
+        }
+        else {
+            cnt -= 2;
+        }
     }
-    else {
-        cnt-=2;
+    else if (c >= a) {
+        if (b >= c) {
+            cnt--;
+        }
+        else {
+            cnt -= 2;
+        }
     }
+
     cout << cnt;
     return 0;
 }
