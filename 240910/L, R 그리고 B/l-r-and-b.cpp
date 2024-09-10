@@ -28,7 +28,7 @@ int main() {
         int sum = abs(lx - bx) + abs(ly - by) - 1;
         cout << sum;
     }
-    else if (lx == bx) {
+    else if (lx == bx && lx == rx) {
         if ((ly < ry && ry < by) || (by < ry && ry < ly)) {
             int sum = abs(ly - by) + 1;
             cout << sum;
@@ -38,7 +38,7 @@ int main() {
             cout << sum;
         }
     }
-    else if (ly == by) {
+    else if (ly == by && ly == ry) {
         if ((lx < rx && rx < bx) || (bx < rx && rx < lx)) {
             int sum = abs(lx - bx) + 1;
             cout << sum;
