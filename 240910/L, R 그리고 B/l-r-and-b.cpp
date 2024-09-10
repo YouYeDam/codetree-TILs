@@ -24,17 +24,18 @@ int main() {
         }
     }
     
+
     if (lx != bx && ly != by) {
         int sum = abs(lx - bx) + abs(ly - by) - 1;
         cout << sum;
     }
     else if (lx == bx) {
-        if ((ly < ry && ry < by) || (by < ry && ry < ly)) {
-            int sum = abs(ly - by) + 1;
+        if (lx != rx) {
+            int sum = abs(ly - by) - 1;
             cout << sum;
         }
-        else if (lx == rx) {
-            int sum = abs(ly - by) - 1;
+        else if ((ly < ry && ry < by) || (by < ry && ry < ly)) {
+            int sum = abs(ly - by) + 1;
             cout << sum;
         }
         else {
@@ -43,13 +44,13 @@ int main() {
         }
     }
     else if (ly == by) {
-        if ((lx < rx && rx < bx) || (bx < rx && rx < lx)) {
-            int sum = abs(lx - bx) + 1;
-            cout << sum;
-        }
-        else if (ly == ry) {
+        if (ly != ry) {
             int sum = abs(lx - bx) - 1;
             cout << sum;     
+        }
+        else if ((lx < rx && rx < bx) || (bx < rx && rx < lx)) {
+            int sum = abs(lx - bx) + 1;
+            cout << sum;
         }
         else {
             int sum = abs(lx - bx) - 1;
