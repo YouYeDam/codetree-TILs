@@ -4,13 +4,11 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
-
     int arr[100] = {};
-
+    int wifi[100] = {};
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
     int idx = m;
     int cnt = 0;
     int x = m * 3 + 1;
@@ -21,7 +19,10 @@ int main() {
                 continue;
             }
 
-            if (arr[i] == 1) {
+            if (arr[i] == 1 && wifi[i] != 1) {
+                for (int j = idx - m; j <= idx + m; j++) {
+                    wifi[j] = 1;
+                }
                 cnt++;
                 break;
             }
