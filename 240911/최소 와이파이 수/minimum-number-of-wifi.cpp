@@ -4,8 +4,8 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
-    int arr[100] = {};
-    int wifi[100] = {};
+    int arr[200] = {};
+    int wifi[200] = {};
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
