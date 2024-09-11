@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    int arr[100];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int cnt = 0;
+    int wifi_idx = m;
+    for (int i = wifi_idx; i < n; i+= m*2+1) {
+        for (int j = wifi_idx - m; j < wifi_idx + m; j++) {
+            if (j < 0 || j > n - 1) {
+                continue;
+            }
+            if (arr[j] == 1) {
+                cnt++;
+                break;
+            }
+        }
+    }
+    cout << cnt;
+    return 0;
+}
