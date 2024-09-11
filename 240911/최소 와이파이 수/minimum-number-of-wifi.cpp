@@ -24,6 +24,9 @@ int main() {
                 break;
             }
         }
+        if (i + m*2 + 1 > n) {
+            cnt++;
+        }
     }
     if (m == 0) {
         for (int i = 0; i < n; i++) {
