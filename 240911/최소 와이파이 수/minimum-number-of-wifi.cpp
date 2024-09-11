@@ -25,7 +25,7 @@ int main() {
             }
         }
     }
-    if (m == 0) {
+    if (m == 0 || m >= n - 1) {
         for (int i = 0; i < n; i++) {
             if (arr[i] == 1) {
                 cnt++;
@@ -33,9 +33,17 @@ int main() {
         }
     }
     else if (m >= n - 1) {
-        cnt = 1;
+        bool IsNeed = false;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 1) {
+                IsNeed = true;
+                cnt = 1;
+            }
+        }
+        if (!IsNeed) {
+            cnt = 0;
+        }
     }
-
     cout << cnt;
     return 0;
 }
