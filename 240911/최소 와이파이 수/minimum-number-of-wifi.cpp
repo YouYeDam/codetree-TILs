@@ -21,6 +21,9 @@ int main() {
 
             if (arr[i] == 1 && wifi[i] != 1) {
                 for (int j = idx - m; j <= idx + m; j++) {
+                    if (j < 0 || j >= n) {
+                        continue;
+                    }
                     wifi[j] = 1;
                 }
                 cnt++;
