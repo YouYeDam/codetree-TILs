@@ -12,6 +12,9 @@ int main() {
     int cnt = 0;
     int wifi_idx = m;
     for (int i = wifi_idx; i < n; i+= m*2+1) {
+        if (m == 0) {
+            break;
+        }
         for (int j = wifi_idx - m; j < wifi_idx + m; j++) {
             if (j < 0 || j > n - 1) {
                 continue;
@@ -19,6 +22,13 @@ int main() {
             if (arr[j] == 1) {
                 cnt++;
                 break;
+            }
+        }
+    }
+    if (m == 0) {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 1) {
+                cnt++;
             }
         }
     }
