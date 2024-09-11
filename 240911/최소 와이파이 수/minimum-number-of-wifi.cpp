@@ -32,11 +32,10 @@ int main() {
             }
         }
     }
-
-    if (m >= n - 1) {
+    else if (m >= n - 1) {
         cnt = 1;
     }
-    
+
     cout << cnt;
     return 0;
 }
