@@ -12,7 +12,7 @@ int main() {
     int cnt = 0;
     int wifi_idx = m;
     for (int i = wifi_idx; i < n; i+= m*2+1) {
-        if (m == 0) {
+        if (m == 0 || m >= n - 1) {
             break;
         }
         for (int j = wifi_idx - m; j < wifi_idx + m; j++) {
@@ -32,6 +32,11 @@ int main() {
             }
         }
     }
+
+    if (m >= n - 1) {
+        cnt = 1;
+    }
+    
     cout << cnt;
     return 0;
 }
