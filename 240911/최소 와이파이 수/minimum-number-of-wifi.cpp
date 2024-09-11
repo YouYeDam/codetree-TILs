@@ -12,8 +12,12 @@ int main() {
     int idx = m;
     int cnt = 0;
     int x = m * 3 + 1;
-
-    while (idx < n + x) {
+    bool IsEnd = false;
+    while (!IsEnd) {
+        if (idx >= n) {
+            idx = n - 1;
+            IsEnd = true;
+        }
         for (int i = idx - m; i <= idx + m; i++) {
             if (i < 0 || i >= n) {
                 continue;
@@ -32,9 +36,7 @@ int main() {
         }
         idx += x - m;
     }
-    if (n == 96 && m == 1) {
-        cnt--;
-    }
+
     cout << cnt;
     return 0;
 }
