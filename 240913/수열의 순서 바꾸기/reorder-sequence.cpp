@@ -44,19 +44,23 @@ int main() {
                 IsSecsort = false;
             }
         }
+
         if (IsSecsort) {
             obj_idx = sec_idx - 1;
         }
         else {
-            int min_idx;
-            int min_num = 1000;
             for (int i = sec_idx + 1; i < n; i++) {
-                if (arr[i] < min_num) {
-                    min_num = arr[i];
-                    min_idx = i;
+                bool IsAfterSort = true;
+                for (int j = i; j < n - 1; j++) {
+                    if (arr[i] > arr[i + 1]) {
+                        IsAfterSort = false;
+                    }
+                }
+                if (IsAfterSort) {
+                    obj_idx = i - 1;
+                    break;
                 }
             }
-            obj_idx = min_idx - 1;
         }
 
         for (int i = 1; i < n; i++) {
