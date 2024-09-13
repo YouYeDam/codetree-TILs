@@ -13,6 +13,18 @@ int main() {
 
     int cnt = 0;
     while (true) {
+        bool IsSort = true;
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i]> arr[i+1]) {
+                IsSort = false;
+                break;
+            }
+        }
+
+        if (IsSort) {
+            break;
+        }
         int max_val = 0;
         int max_val_idx;
         for (int i = 1; i < n; i++) {
@@ -33,18 +45,6 @@ int main() {
         }
         arr[obj_idx] = temp;
         cnt++;
-        bool IsSort = true;
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i]> arr[i+1]) {
-                IsSort = false;
-                break;
-            }
-        }
-
-        if (IsSort) {
-            break;
-        }
     }
     cout << cnt;
     return 0;
