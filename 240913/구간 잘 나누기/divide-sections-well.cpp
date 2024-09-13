@@ -17,8 +17,8 @@ int main() {
         bool IsPossible = true;
         for (int j = 0; j < n; j++) {
             if (arr[j] > i) {
-                break;
                 IsPossible = false;
+                break;
             }
             if (cur_sum + arr[j] > i) {
                 cnt++;
@@ -32,7 +32,7 @@ int main() {
             continue;
         }
 
-        if (cnt == m - 1) {
+        if (cnt <= m - 1) {
             cout << i;
             break;
         }
@@ -40,3 +40,7 @@ int main() {
 
     return 0;
 }
+
+// 일부로 더 잘라야 함
+// cnt가 m - 1보다 적어
+// cnt를 m - 1이 될 때 까지 잘라
