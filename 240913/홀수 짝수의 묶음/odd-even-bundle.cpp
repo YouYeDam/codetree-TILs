@@ -21,6 +21,7 @@ int main() {
     }
 
     int cnt = 0;
+    int rest_cnt = 0;
     bool IsOddHigh = false;
 
     if (even_cnt > odd_cnt) {
@@ -28,6 +29,7 @@ int main() {
     }
     else if (odd_cnt > even_cnt) {
         cnt = even_cnt * 2;
+        rest_cnt = odd_cnt - even_cnt;
         IsOddHigh = true;
     }
     else {
@@ -36,7 +38,15 @@ int main() {
 
 
     if (IsOddHigh) {
-        cnt += odd_cnt/ 2;
+        if (rest_cnt % 3 == 0) {
+            cnt += 2 * (rest_cnt / 3);
+        }
+        else if (rest_cnt % 3 == 1) {
+            cnt += 2 * (rest_cnt / 3) - 1;
+        }
+        else if (rest_cnt % 3 == 2) {
+            cnt += 2 * (rest_cnt / 3) + 1;
+        }
     }
 
     cout << cnt;
