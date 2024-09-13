@@ -52,7 +52,7 @@ int main() {
             for (int i = sec_idx + 1; i < n; i++) {
                 bool IsAfterSort = true;
                 for (int j = i; j < n - 1; j++) {
-                    if (arr[i] > arr[i + 1]) {
+                    if (arr[j] > arr[j + 1]) {
                         IsAfterSort = false;
                     }
                 }
