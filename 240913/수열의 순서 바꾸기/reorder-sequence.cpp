@@ -22,7 +22,13 @@ int main() {
             cout << cnt;
             break;
         }
-        int obj_idx = n - 2;
+        int max_idx = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > arr[max_idx]) {
+                max_idx = i;
+            }
+        }
+        int obj_idx = max_idx;
 
         for (int i = 1; i < n; i++) {
             if (arr[0] > arr[i]) {
@@ -40,6 +46,6 @@ int main() {
     return 0;
 
     // 가장 마지막에 존재하는 얘보다 작은 숫자 뒤
-    // 작은 숫자가 없을 경우 가장 마지막에 존재하는 얘보다 큰 숫자 앞 = 마지막 앞
+    // 작은 숫자가 없을 경우 가장 큰 숫자 뒤
 
 }
