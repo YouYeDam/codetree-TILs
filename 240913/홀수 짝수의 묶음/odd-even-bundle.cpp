@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-
+//11 2 17 13 1 15 3
     int arr[1000];
     int even_cnt = 0;
     int odd_cnt = 0;
@@ -22,21 +22,18 @@ int main() {
     }
 
     int cnt = 0;
-    int rest_cnt = 0;
     bool IsOddHigh = false;
 
     if (even_cnt >= odd_cnt) {
-        rest_cnt = even_cnt - odd_cnt;
         cnt = odd_cnt * 2;
     }
     else {
-        rest_cnt = odd_cnt - even_cnt;
-        cnt == even_cnt * 2;
+        cnt = even_cnt * 2;
         IsOddHigh = true;
     }
 
     if (IsOddHigh) {
-        cnt += rest_cnt / 2;
+        cnt += odd_cnt/ 2;
     }
 
     cout << cnt;
