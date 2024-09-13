@@ -37,7 +37,7 @@ int main() {
         int obj_idx = n - 1;
         bool IsBetween = false;
         for (int i = 1; i < n - 1; i++) {
-            if (arr[i] == arr[0] - 1 && arr[i+1] == arr[0] + 1) {
+            if (arr[i] < arr[i] && arr[i + 1] > arr[i]) {
                 obj_idx = i;
                 IsBetween = true;
             }
