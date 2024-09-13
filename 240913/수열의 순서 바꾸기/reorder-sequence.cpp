@@ -25,6 +25,7 @@ int main() {
         if (IsSort) {
             break;
         }
+
         int max_val = 0;
         int max_val_idx;
         for (int i = 1; i < n; i++) {
@@ -34,9 +35,18 @@ int main() {
             }
         }
         int obj_idx = n - 1;
-        for (int i = max_val_idx + 1; i < n; i++) {
-            if (arr[i] > arr[0]) {
-                obj_idx = i - 1;
+        bool IsBetween = false;
+        for (int i = 1; i < n - 1; i++) {
+            if (arr[i] == arr[0] - 1 && arr[i+1] == arr[0] + 1) {
+                obj_idx = i;
+                IsBetween = true;
+            }
+        }
+        if (!IsBetween) {
+            for (int i = max_val_idx + 1; i < n; i++) {
+                if (arr[i] > arr[0]) {
+                    obj_idx = i - 1;
+                }
             }
         }
         int temp = arr[0];
