@@ -17,7 +17,6 @@ int main() {
     for (int i = 0; i < m; i++) {
         char command;
         cin >> command;
-
         if (command == 'L') {
             if (it == l.begin()) {
                 continue;
@@ -31,6 +30,9 @@ int main() {
             it++;
         }
         else if (command == 'D') {
+            if (it == l.end()) {
+                continue;
+            }
             l.erase(it);
         }
         else {
