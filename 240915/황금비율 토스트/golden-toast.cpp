@@ -5,18 +5,21 @@ using namespace std;
 
 int main() {
     int n, m;
-    string str;
-    cin >> n >> m >> str;
+    cin >> n >> m;
     list<char> l;
 
     for (int i = 0; i < n; i++) {
-        l.push_back(str[i]);
+        char alp;
+        cin >> alp;
+        l.push_back(alp);
     }
+
     list<char>::iterator it = l.end();
 
     for (int i = 0; i < m; i++) {
         char command;
         cin >> command;
+
         if (command == 'L') {
             if (it == l.begin()) {
                 continue;
@@ -33,17 +36,19 @@ int main() {
             if (it == l.end()) {
                 continue;
             }
-            l.erase(it);
+            it = l.erase(it);
         }
-        else {
+        else if(command == 'P') {
             char s;
             cin >> s;
             l.insert(it, s);
         }
+
     }
 
-        for(it = l.begin(); it != l.end(); it++) {
-            cout << *it;
-        } 
+    for(it = l.begin(); it != l.end(); it++) {
+        cout << *it;
+    } 
+
     return 0;
 }
