@@ -24,11 +24,13 @@ void Merge(int low, int mid, int high) {
     while (i <= mid) {
         merge_arr[k] = arr[i];
         i++;
+        k++;
     }
 
     while (j <= high) {
         merge_arr[k] = arr[j];
         j++;
+        k++;
     }
 
     for (int i = low; i <= high; i++) {
