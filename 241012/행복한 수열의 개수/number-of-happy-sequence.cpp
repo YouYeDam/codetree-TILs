@@ -15,7 +15,7 @@ int main() {
     int happy_cnt = 0;
 
     for (int i = 0; i < n; i++) { // 행
-        for (int j = 0; j < n - 1; j++) {
+        for (int j = 0; j < n; j++) {
             int val = arr[i][j];
             int same_cnt = 0;
             bool IsHappy = false;
@@ -42,7 +42,7 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) { // 열
-        for (int j = 0; j < n - 1; j++) {
+        for (int j = 0; j < n; j++) {
             int val = arr[j][i];
             int same_cnt = 0;
             bool IsHappy = false;
