@@ -12,11 +12,10 @@ int main() {
             cin >> arr[i][j];
         }
     }
-
     int max_val = 0;
 
     for (int i = 0; i < n; i++) { // 가로 블록
-        for (int j = 0; j < n - 2; j++) {
+        for (int j = 0; j < m - 2; j++) {
             int val = 0;
 
             for (int k = 0; k < 3; k++) {
@@ -27,7 +26,7 @@ int main() {
         }
     }
 
-    for (int i = 0; i < n; i++) { // 세로 블록
+    for (int i = 0; i < m; i++) { // 세로 블록
         for (int j = 0; j < n - 2; j++) {
             int val = 0;
 
@@ -40,7 +39,7 @@ int main() {
     }
 
     for (int i = 0; i < n - 1; i++) { // 세칸 블록
-        for (int j = 0; j < n - 1; j++) {
+        for (int j = 0; j < m - 1; j++) {
             int val = 0;
 
             for (int k = 0; k < 2; k++) {
