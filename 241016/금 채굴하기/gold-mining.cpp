@@ -62,7 +62,7 @@ int main() {
 
                 int gold_price = gold_cnt * m;
 
-                if (total_price >= gold_price) {
+                if (gold_price >= cost) {
                     max_gold_cnt = max(max_gold_cnt, gold_cnt);
                 }
             }
