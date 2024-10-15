@@ -34,8 +34,15 @@ int main() {
             for (int j = 0; j < n; j++) {
                 int gold_cnt = 0;
 
-                for (int x = i - k + 1; x <= i + k - 1; x++) {
-                    for (int y = j - k + 1; y <= j + k - 1; y++) {
+                int init = 0;
+                bool reverse = false;
+
+                for (int x = i - k; x <= i + k; x++) {
+                    if (init == k ) {
+                        reverse = true;
+                    }
+
+                    for (int y = j - init; y <= j + init; y++) {
                         if (x < 0 || x >= n || y < 0 || y >= n) {
                             continue;
                         }
@@ -44,26 +51,12 @@ int main() {
                             gold_cnt++;
                         }
                     }
-                }
 
-                if (i - k >= 0 && i - k < n) {
-                    if (arr[i - k][j] == 1) {
-                        gold_cnt++;
+                    if (reverse) {
+                        init--;
                     }
-                }
-                if (i + k >= 0 && i + k < n) {
-                    if (arr[i + k][j] == 1) {
-                        gold_cnt++;
-                    }
-                }
-                if (j - k >= 0 && j - k < n) {
-                    if (arr[i][j - k] == 1) {
-                        gold_cnt++;
-                    }
-                }
-                if (j + k >= 0 && j + k < n) {
-                    if (arr[i][j + k] == 1) {
-                        gold_cnt++;
+                    else {
+                        init++;
                     }
                 }
 
@@ -74,7 +67,6 @@ int main() {
                 }
             }
         }
-        
         k++;
     }
 
