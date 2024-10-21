@@ -6,10 +6,10 @@ using namespace std;
 int Encoding(string a) {
     string str = "";
 
-    int cnt = 1;
+    int cnt = 0;
     char cur_char = a[0];
 
-    for (int i = 1; i < a.length(); i++) {
+    for (int i = 0; i < a.length(); i++) {
         if (a[i] == cur_char) {
             cnt++;
         }
@@ -28,7 +28,7 @@ int Encoding(string a) {
 int main() {
     string a;
     cin >> a;
-
+    
     
     int n = a.length();
     int min_len = Encoding(a);
