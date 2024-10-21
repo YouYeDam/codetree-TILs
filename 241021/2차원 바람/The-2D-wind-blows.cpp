@@ -68,6 +68,12 @@ int main() {
                 res_arr[i][j] = avg;
             }
         }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = res_arr[i][j];
+            }
+         }
     }
 
 
