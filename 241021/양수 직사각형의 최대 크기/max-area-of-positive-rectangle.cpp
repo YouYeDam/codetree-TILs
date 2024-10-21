@@ -32,11 +32,6 @@ int main() {
                     break;
                 }
             }
-            
-            if (col_size == 1) {
-                max_size = max(max_size, col_size);
-                break;
-            }
 
             for (int q = 1; q <= col_size; q++) {
                 int temp_size = q;
