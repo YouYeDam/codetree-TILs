@@ -5,16 +5,16 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
-    int arr[20][20];
+    int arr[20][20] = {};
 
-    int max_size = 0;
+    int max_size = -1;
         
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> arr[i][j];
         }
     }
-
+    
     for (int i = 0; i < n; i++) { // 가로행 기준
         for (int j = 0; j < m; j++) {
             if (arr[i][j] < 1) {
