@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <climits>
 using namespace std;
 
 int n;
@@ -96,7 +95,7 @@ int main() {
         }
     }
 
-    int max_cnt = INT_MIN;
+    int max_cnt = 0;
 
     for (int r = 0; r < n; r++) {
         for (int c = 0; c < n; c++) {
