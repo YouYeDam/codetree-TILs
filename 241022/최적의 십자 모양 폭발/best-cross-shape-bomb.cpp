@@ -67,7 +67,6 @@ int Count_Pair(int sample_arr[][50]) {
             }
             if (sample_arr[i][j] == sample_arr[i][j + 1]) {
                 cnt++;
-                j++;
             }
         }
     }
@@ -79,7 +78,6 @@ int Count_Pair(int sample_arr[][50]) {
             }
             if (sample_arr[j][i] == sample_arr[j + 1][i]) {
                 cnt++;
-                j++;
             }
         }
     }
