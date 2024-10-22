@@ -18,10 +18,18 @@ int main() {
     int bomb_size = arr[r][c];
 
     for (int i = 0; i < bomb_size; i++) {
-        arr[r - i][c] = 0;
-        arr[r + i][c] = 0;
-        arr[r][c - i] = 0;
-        arr[r][c + i] = 0;
+        if (r - i >= 0) {
+            arr[r - i][c] = 0;
+        }
+        if (r + i < 200) {
+            arr[r + i][c] = 0;
+        }
+        if (c - i >= 0) {
+            arr[r][c - i] = 0;
+        }
+        if (c + i < 200) {
+            arr[r][c + i] = 0;
+        }
     }
 
     for (int j = 0; j < n; j++) {
