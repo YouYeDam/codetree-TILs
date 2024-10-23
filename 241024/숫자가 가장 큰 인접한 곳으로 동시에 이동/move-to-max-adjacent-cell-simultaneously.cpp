@@ -5,6 +5,7 @@ using namespace std;
 int main() {
     int n, m, t;
     cin >> n >> m >> t;
+
     int arr[20][20];
     int bead_arr[20][20] = {};
 
@@ -13,7 +14,7 @@ int main() {
             cin >> arr[i][j];
         }
     }
-
+    
     for (int i = 0; i < m; i++) {
         int r, c;
         cin >> r >> c;
@@ -21,7 +22,7 @@ int main() {
 
         bead_arr[r][c] = 1;
     }
-
+    
     for (int i = 0; i < t; i++) {
         int tmp_bead_arr[20][20] = {};
 
@@ -32,28 +33,32 @@ int main() {
                     int mov_r = r;
                     int mov_c = c;
 
-                    if (r-1 >= 0) {
+                    if (r-1 >= 0) { // 상
                         if (arr[r-1][c] > max_val) {
                             max_val = arr[r-1][c];
-                            mov_r--;
+                            mov_r = r - 1;
+                            mov_c = c;
                         }
                     }
-                    if (r+1 <= n-1) {
+                    if (r+1 <= n-1) { // 하
                         if (arr[r+1][c] > max_val) {
                             max_val = arr[r+1][c];
-                            mov_r++;
+                            mov_r = r + 1;
+                            mov_c = c;
                         }
                     }
-                    if (c-1 >= 0) {
+                    if (c-1 >= 0) { // 좌
                         if (arr[r][c-1] > max_val) {
                             max_val = arr[r][c-1];
-                            mov_c--;
+                            mov_r = r;
+                            mov_c = c - 1;
                         }
                     }
-                    if (c+1 <= n-1) {
+                    if (c+1 <= n-1) { // 우
                         if (arr[r][c+1] > max_val) {
                             max_val = arr[r][c+1];
-                            mov_c++;
+                            mov_r = r;
+                            mov_c = c + 1;
                         }
                     }
 
