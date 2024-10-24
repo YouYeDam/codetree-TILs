@@ -13,7 +13,7 @@ void Push(int x, int y) {
 }
 
 bool CanGo(int x, int y) {
-    if (x < 0 || x >= n || y < 0 || y >= n) {
+    if (x < 0 || x >= n || y < 0 || y >= m) {
         return false;
     }
     if (visited[x][y] || arr[x][y] == 0) {
@@ -33,10 +33,6 @@ void BFS() {
         int x = cur_pos.first;
         int y = cur_pos.second;
 
-        if (x == n - 1 && y == m - 1) {
-            IsExist = true;
-        }
-
         for (int i = 0; i < 4; i++) {
             int new_x = x + dx[i];
             int new_y = y + dy[i];
@@ -45,13 +41,6 @@ void BFS() {
             }
         }
 
-    }
-
-    if (IsExist) {
-        cout << 1;
-    }
-    else {
-        cout << 0;
     }
 }
 
@@ -68,6 +57,12 @@ int main() {
     Push(0, 0);
     BFS();
     
+    if (visited[n-1][m-1]) {
+        cout << 1;
+    }
+    else {
+        cout << 0;
+    }
 
     return 0;
 }
