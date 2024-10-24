@@ -25,6 +25,7 @@ int main() {
         cin >> x >> y;
 
         graph[x][y] = 1;
+        graph[y][x] = 1;
     }
 
     DFS(1);
