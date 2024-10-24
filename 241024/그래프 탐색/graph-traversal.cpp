@@ -27,7 +27,7 @@ int main() {
         graph[x][y] = 1;
         graph[y][x] = 1;
     }
-
+    visited[1] = 1;
     DFS(1);
     cout << cnt;
     return 0;
