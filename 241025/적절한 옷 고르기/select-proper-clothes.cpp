@@ -7,10 +7,16 @@ int main() {
     int n, m;
     cin >> n >> m;
     int wear[200][3];
-    int dp[201][200] = {};
+    int dp[201][200];
 
     for (int i = 0; i < n; i++) {
         cin >> wear[i][0] >> wear[i][1] >> wear[i][2];
+    }
+    
+    for (int i = 0; i <= m; i++) {
+        for (int j = 0; j < n; j++) {
+            dp[i][j] = INT_MIN;
+        }
     }
 
     for (int i = 0; i < n; i++) {
@@ -29,17 +35,17 @@ int main() {
             int pre_idx;
 
             for (int k = 0; k < n; k++) { // 어제 입은 옷
-                if (dp[i-1][k] == 0) {
+                if (dp[i-1][k] == INT_MIN) {
                     continue;
                 }
 
                 int val = abs(wear[k][2] - wear[j][2]);
-
                 if (val > max_val) {
                     max_val = val;
                     pre_idx = k;
                 }
             }
+
             if (i == 2) {
                 dp[i][j] = max_val;
             }
