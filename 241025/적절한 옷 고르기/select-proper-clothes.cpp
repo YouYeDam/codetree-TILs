@@ -21,7 +21,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         if (wear[i][0] == 1) {
-            dp[1][i] = wear[i][2];
+            dp[1][i] = 0;
         }
     }
 
@@ -39,18 +39,7 @@ int main() {
                     continue;
                 }
 
-                int val = abs(wear[k][2] - wear[j][2]);
-                if (val > max_val) {
-                    max_val = val;
-                    pre_idx = k;
-                }
-            }
-
-            if (i == 2) {
-                dp[i][j] = max_val;
-            }
-            else {
-                dp[i][j] = dp[i-1][pre_idx] + max_val;
+                dp[i][j] = max(dp[i][j], dp[i-1][k] + abs(wear[j][2] - wear[k][2]));
             }
         }
     }
