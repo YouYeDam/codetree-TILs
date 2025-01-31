@@ -3,17 +3,18 @@
 using namespace std;
 
 int n, m;
+int cnt = 0;
 int graph[1001][1001] = {};
 int visited[1001] = {};
 
-void DFS(int cur_v)
+void DFS(int vertex)
 {
-    for (int i = 1; i <= n; i++)
+    for (int cur_v = 1; cur_v <= n; cur_v++)
     {
-        if (graph[cur_v][i] == 1 && visited[i] != 1)
+        if (graph[vertex][cur_v] == 1 && visited[cur_v] != 1)
         {
-            visited[i] = 1;
-            cur_v = i;
+            visited[cur_v] = 1;
+            cnt++;
             DFS(cur_v);
         }
     }
@@ -33,14 +34,6 @@ int main() {
     visited[1] = 1;
     DFS(1);
 
-    int cnt = 0;
-    for (int i = 2; i < 1001; i++)
-    {
-        if (visited[i] == 1)
-        {
-            cnt++;
-        }
-    }
     cout << cnt;
     return 0;
 }
